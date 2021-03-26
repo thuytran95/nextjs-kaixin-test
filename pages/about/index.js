@@ -8,7 +8,7 @@ export default class About extends Component {
       <div>
         <Header />
         <h1>This is about page</h1>
-        <MessengerChat pageId="107851557422909" htmlRef="fb-msgr" />
+        <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
       </div>
     );
   }
