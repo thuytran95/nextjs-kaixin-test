@@ -6,7 +6,7 @@ function Home() {
     <div>
       <Header />
       <h1>Trang login</h1>
-      <MessengerChat pageId="107851557422909" htmlRef="fb-msgr" />
+      <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
     </div>
   );
 }

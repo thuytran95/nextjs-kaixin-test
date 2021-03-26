@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <Header />
       <h1>Trang home</h1>
-      <MessengerChat pageId="107851557422909" htmlRef="fb-msgr" />
+      <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
     </div>
   );
 }
