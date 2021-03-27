@@ -31,7 +31,7 @@ export default class VideoJS extends React.Component {
     s.async = true;
     s.innerHTML = `var videoEl = document.getElementById("myVideo");
     const option = {vhs: {
-            overrideNative: true,
+            overrideNative: false,
             withCredentials: true,
           }}
     const newOptions = Object.assign(videojs.options.html5, option );
