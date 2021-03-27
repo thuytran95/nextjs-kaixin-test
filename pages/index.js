@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 
 import Header from "../public/Header";
 import MessengerChat from "../public/Messenger";
+import VideoJS from "../public/VideoJS";
 
 export default function Home() {
   return (
@@ -11,20 +12,20 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://unpkg.com/video.js/dist/video-js.css"
+          href=" https://unpkg.com/video.js@7.0.0/dist/video-js.css"
           rel="stylesheet"
           type="text/css"
         />
-        <script src="js/videojs-core.js" type="text/javascript"></script>
+
         <script
-          src="js/videojs-http-streaming.js"
+          src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"
           type="text/javascript"
         ></script>
-        <script src="js/control-video.js" type="text/javascript"></script>
+        {/* <script src="js/control-video.js" type="text/javascript"></script> */}
       </Head>
       <Header />
       <h1>Trang home</h1>
-      <video-js
+      {/* <video-js
         id="my_video_1"
         class="vjs-default-skin vjs-16-9"
         controls
@@ -36,7 +37,20 @@ export default function Home() {
           src="https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
           type="application/x-mpegURL"
         />
-      </video-js>
+      </video-js> */}
+      <VideoJS
+        options={{
+          html5: {
+            vhs: {
+              overrideNative: true,
+            },
+          },
+        }}
+        id="my_video_1"
+        class="vjs-default-skin vjs-16-9"
+        controls
+        src="https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
+      ></VideoJS>
       <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
     </div>
   );
