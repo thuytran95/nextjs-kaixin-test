@@ -22,6 +22,25 @@ export default function Home() {
           type="text/javascript"
         ></script>
         {/* <script src="js/control-video.js" type="text/javascript"></script> */}
+        {/* <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                console.log('Console message');
+                var videoEl = document.getElementById("my_video_1");
+                  var player = window.player = window.videojs(videoEl, {
+                    html5: {
+                      vhs: {
+                        overrideNative: true,
+                        withCredentials: true,
+                      },
+                    },
+                  });
+
+                  player.play();
+
+              `,
+          }}
+        /> */}
       </Head>
       <Header />
       <h1>Trang home</h1>
@@ -39,18 +58,17 @@ export default function Home() {
         />
       </video-js> */}
       <VideoJS
-        options={{
-          html5: {
-            vhs: {
-              overrideNative: true,
-            },
-            nativeAudioTracks: false,
-            nativeVideoTracks: false,
-          },
-        }}
-        id="my_video_1"
-        class="vjs-default-skin vjs-16-9"
-        controls
+        // options={{
+        //   html5: {
+        //     vhs: {
+        //       overrideNative: true,
+        //     },
+        //     nativeAudioTracks: false,
+        //     nativeVideoTracks: false,
+        //   },
+        // }}
+        // id="my_video_1"
+        // class="vjs-default-skin vjs-16-9"
         src="https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
       ></VideoJS>
       <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
