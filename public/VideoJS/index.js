@@ -30,12 +30,14 @@ export default class VideoJS extends React.Component {
     s.type = "text/javascript";
     s.async = true;
     s.innerHTML = `var videoEl = document.getElementById("myVideo");
-    const option = {vhs: {
-            overrideNative: false,
-            withCredentials: true,
-          }}
-    const newOptions = Object.assign(videojs.options.html5, option );
-    // console.log(videojs.options.html5);
+   const video.options.html5 ={
+    hls: {
+      overrideNative: false
+    },
+    nativeVideoTracks: true,
+    nativeAudioTracks: true,
+    nativeTextTracks: true
+   };
     console.log(videojs.options);
     
     // console.log(videojs.options);
