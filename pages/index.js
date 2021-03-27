@@ -44,6 +44,8 @@ export default function Home() {
             vhs: {
               overrideNative: true,
             },
+            nativeAudioTracks: false,
+            nativeVideoTracks: false,
           },
         }}
         id="my_video_1"
