@@ -21,6 +21,12 @@ export default function Home() {
           src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"
           type="text/javascript"
         ></script>
+        <script
+          src="js/videojs-http-streaming.js"
+          type="text/javascript"
+        ></script>
+        <script src="https://unpkg.com/videojs-flash@2.0.1/dist/videojs-flash.js"></script>
+
         {/* <script src="js/control-video.js" type="text/javascript"></script> */}
         {/* <script
           dangerouslySetInnerHTML={{

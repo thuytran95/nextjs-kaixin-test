@@ -5,10 +5,6 @@ import { setupEmeOptions } from "../js/videojs-http-streaming";
 // import styles from "./style.scss";
 
 export default class VideoJS extends React.Component {
-  ref = (node) => {
-    this.videoNode = node;
-  };
-
   // parentRef = (el) => {
   //   this.instance = el;
   // };
@@ -20,7 +16,7 @@ export default class VideoJS extends React.Component {
     // });
     this.player = window.player = window.videojs(
       this.videoNode,
-      { ...this.props },
+      this.props,
       function onPlayerReady() {
         this.play();
       }
@@ -30,17 +26,26 @@ export default class VideoJS extends React.Component {
     s.type = "text/javascript";
     s.async = true;
     s.innerHTML = `var videoEl = document.getElementById("myVideo");
-   const video.options.html5 ={
-    hls: {
-      overrideNative: false
-    },
-    nativeVideoTracks: true,
-    nativeAudioTracks: true,
-    nativeTextTracks: true
-   };
-    console.log(videojs.options);
+      var overrideNative = false;
+      videojs.options.html5 = {
+        hls: {
+          overrideNative: overrideNative
+        },
+        nativeVideoTracks: !overrideNative,
+        nativeAudioTracks: !overrideNative,
+        nativeTextTracks: !overrideNative
+      };
+      videojs.options.html5 = {
+        vhs: {
+          overrideNative: overrideNative
+        },
+        nativeVideoTracks: !overrideNative,
+        nativeAudioTracks: !overrideNative,
+        nativeTextTracks: !overrideNative
+      };
+  
     
-    // console.log(videojs.options);
+    console.log(videojs.options);
     // var player = window.player = window.videojs(videoEl, {
     //   html5: {
     //     vhs: {
@@ -50,7 +55,7 @@ export default class VideoJS extends React.Component {
     //   },
     // });
 
-    player.play();`;
+    window.player.play();`;
     this.instance.appendChild(s);
     // {
     //   html5: {
@@ -82,12 +87,11 @@ export default class VideoJS extends React.Component {
       <div ref={(el) => (this.instance = el)}>
         <video-js
           id="myVideo"
-          // ref={(node) => (this.videoNode = node)}
-          ref={this.ref}
+          ref={(node) => (this.videoNode = node)}
           className="vjs-default-skin"
           controls
         >
-          <source src={this.props.src}></source>
+          <source src={this.props.src} type="application/x-mpegURL"></source>
         </video-js>
       </div>
     );
