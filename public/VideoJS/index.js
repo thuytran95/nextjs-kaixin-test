@@ -14,57 +14,27 @@ export default class VideoJS extends React.Component {
     //   console.log(this);
     //   window.VIDEOJS_NO_DYNAMIC_STYLE === true;
     // });
-    this.player = window.player = window.videojs(
-      this.videoNode,
-      this.props,
-      function onPlayerReady() {
-        this.play();
-      }
-    );
+    this.player = videojs(this.videoNode, this.props, function onPlayerReady() {
+      this.play();
+    });
     console.log(this.player);
-    const s = document.createElement("script");
-    s.type = "text/javascript";
-    s.async = true;
-    s.innerHTML = `var videoEl = document.getElementById("myVideo");
-      var overrideNative = false;
-      videojs.options.html5 = {
-        hls: {
-          overrideNative: overrideNative
-        },
-        nativeVideoTracks: !overrideNative,
-        nativeAudioTracks: !overrideNative,
-        nativeTextTracks: !overrideNative
-      };
-      videojs.options.html5 = {
-        vhs: {
-          overrideNative: overrideNative
-        },
-        nativeVideoTracks: !overrideNative,
-        nativeAudioTracks: !overrideNative,
-        nativeTextTracks: !overrideNative
-      };
-  
-    
-    console.log(videojs.options);
-    // var player = window.player = window.videojs(videoEl, {
-    //   html5: {
-    //     vhs: {
-    //       overrideNative: true,
-    //       withCredentials: true,
-    //     },
-    //   },
-    // });
+    // const s = document.createElement("script");
+    // s.type = "text/javascript";
+    // s.async = true;
+    // s.innerHTML = `var videoEl = document.getElementById("myVideo");
+    //   var overrideNative = false;
+    //   videojs.options.html5 = {
 
-    window.player.play();`;
-    this.instance.appendChild(s);
-    // {
-    //   html5: {
-    //     vhs: {
-    //       overrideNative: true,
-    //     },
-    //   },
-    // },
+    //   };
   }
+
+  // nativeVideoTracks: !overrideNative,
+  // nativeAudioTracks: !overrideNative,
+  // nativeTextTracks: !overrideNative,
+  // vhs: {
+  //   overrideNative: overrideNative,
+  //   withCredentials: true,
+  // },
 
   shouldComponentUpdate(prevProps) {
     if (this.props.src !== prevProps.src) {
@@ -90,8 +60,13 @@ export default class VideoJS extends React.Component {
           ref={(node) => (this.videoNode = node)}
           className="vjs-default-skin"
           controls
+          data-setup='{ "html5": { "vhs": {" overrideNative": false}, "nativeVideoTracks": true, "nativeAudioTracks": true, "nativeTextTracks": true } }'
         >
-          <source src={this.props.src} type="application/x-mpegURL"></source>
+          <source
+            src="
+              https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
+            type="application/x-mpegURL"
+          ></source>
         </video-js>
       </div>
     );

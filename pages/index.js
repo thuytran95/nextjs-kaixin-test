@@ -17,36 +17,10 @@ export default function Home() {
           type="text/css"
         />
 
-        <script
-          src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"
-          type="text/javascript"
-        ></script>
-        <script
-          src="js/videojs-http-streaming.js"
-          type="text/javascript"
-        ></script>
+        <script src="https://unpkg.com/video.js@6.4.0/dist/video.js"></script>
         <script src="https://unpkg.com/videojs-flash@2.0.1/dist/videojs-flash.js"></script>
-
-        {/* <script src="js/control-video.js" type="text/javascript"></script> */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                console.log('Console message');
-                var videoEl = document.getElementById("my_video_1");
-                  var player = window.player = window.videojs(videoEl, {
-                    html5: {
-                      vhs: {
-                        overrideNative: true,
-                        withCredentials: true,
-                      },
-                    },
-                  });
-
-                  player.play();
-
-              `,
-          }}
-        /> */}
+        <script src="https://unpkg.com/videojs-contrib-hls@5.12.2/dist/videojs-contrib-hls.js"></script>
+        <script src="js/videojs-http-streaming.js"></script>
       </Head>
       <Header />
       <h1>Trang home</h1>
@@ -63,20 +37,7 @@ export default function Home() {
           type="application/x-mpegURL"
         />
       </video-js> */}
-      <VideoJS
-        // options={{
-        //   html5: {
-        //     vhs: {
-        //       overrideNative: true,
-        //     },
-        //     nativeAudioTracks: false,
-        //     nativeVideoTracks: false,
-        //   },
-        // }}
-        // id="my_video_1"
-        // class="vjs-default-skin vjs-16-9"
-        src="https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
-      ></VideoJS>
+      <VideoJS></VideoJS>
       <MessengerChat pageId="105674048286261" htmlRef="fb-msgr" />
     </div>
   );
