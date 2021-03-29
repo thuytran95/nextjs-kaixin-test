@@ -25,6 +25,7 @@ export default function Home() {
       <Header />
       <h1>Trang home</h1>
       {/* <video-js
+
         id="my_video_1"
         class="vjs-default-skin vjs-16-9"
         controls
