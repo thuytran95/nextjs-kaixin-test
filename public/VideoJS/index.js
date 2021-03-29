@@ -15,21 +15,15 @@ export default class VideoJS extends React.Component {
     //   window.VIDEOJS_NO_DYNAMIC_STYLE === true;
     // });
     var overrideNative = false;
-    this.player = videojs(
-      this.videoNode,
-      {
-        hls: {
-          overrideNative: overrideNative,
-        },
-        nativeVideoTracks: !overrideNative,
-        nativeAudioTracks: !overrideNative,
-        nativeTextTracks: !overrideNative,
+    this.player = videojs(this.videoNode, {
+      hls: {
+        overrideNative: overrideNative,
       },
-
-      function onPlayerReady() {
-        this.player.play();
-      }
-    );
+      nativeVideoTracks: !overrideNative,
+      nativeAudioTracks: !overrideNative,
+      nativeTextTracks: !overrideNative,
+    });
+    this.player.play();
     // console.log(this.player);
     // const s = document.createElement("script");
     // s.type = "text/javascript";
