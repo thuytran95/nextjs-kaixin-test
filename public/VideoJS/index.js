@@ -14,10 +14,23 @@ export default class VideoJS extends React.Component {
     //   console.log(this);
     //   window.VIDEOJS_NO_DYNAMIC_STYLE === true;
     // });
-    this.player = videojs(this.videoNode, this.props, function onPlayerReady() {
-      this.play();
-    });
-    console.log(this.player);
+    var overrideNative = false;
+    this.player = videojs(
+      this.videoNode,
+      {
+        hls: {
+          overrideNative: overrideNative,
+        },
+        nativeVideoTracks: !overrideNative,
+        nativeAudioTracks: !overrideNative,
+        nativeTextTracks: !overrideNative,
+      },
+
+      function onPlayerReady() {
+        this.play();
+      }
+    );
+    // console.log(this.player);
     // const s = document.createElement("script");
     // s.type = "text/javascript";
     // s.async = true;
@@ -60,7 +73,6 @@ export default class VideoJS extends React.Component {
           ref={(node) => (this.videoNode = node)}
           className="vjs-default-skin"
           controls
-          data-setup='{ "html5": { "vhs": {" overrideNative": false}, "nativeVideoTracks": true, "nativeAudioTracks": true, "nativeTextTracks": true } }'
         >
           <source
             src="
