@@ -17,10 +17,12 @@ export default function Home() {
           type="text/css"
         />
 
-        <script src="https://unpkg.com/video.js@6.4.0/dist/video.js"></script>
+        {/* <script src="https://unpkg.com/video.js@6.4.0/dist/video.js"></script>
         <script src="https://unpkg.com/videojs-flash@2.0.1/dist/videojs-flash.js"></script>
         <script src="https://unpkg.com/videojs-contrib-hls@5.12.2/dist/videojs-contrib-hls.js"></script>
-        <script src="js/videojs-http-streaming.js"></script>
+        <script src="js/videojs-http-streaming.js"></script> */}
+        <script src="https://unpkg.com/video.js/dist/video.js"></script>
+        <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
       </Head>
       <Header />
       <h1>Trang home</h1>
