@@ -15,13 +15,20 @@ export default class VideoJS extends React.Component {
     //   window.VIDEOJS_NO_DYNAMIC_STYLE === true;
     // });
     var overrideNative = false;
-    this.player = videojs(this.videoNode, {
-      hls: {
-        overrideNative: overrideNative,
+    this.player = videojs("myVideo");
+    this.player.src({
+      src:
+        " https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8",
+      type: "application/x-mpegURL",
+      withCredentials: false,
+      html5: {
+        hls: {
+          overrideNative: overrideNative,
+        },
+        nativeVideoTracks: !overrideNative,
+        nativeAudioTracks: !overrideNative,
+        nativeTextTracks: !overrideNative,
       },
-      nativeVideoTracks: !overrideNative,
-      nativeAudioTracks: !overrideNative,
-      nativeTextTracks: !overrideNative,
     });
     this.player.play();
     // console.log(this.player);
@@ -67,13 +74,7 @@ export default class VideoJS extends React.Component {
           ref={(node) => (this.videoNode = node)}
           className="vjs-default-skin"
           controls
-        >
-          <source
-            src="
-              https://file.mentor.vn/files/lessons/output/file-1614840748161/playlist.m3u8"
-            type="application/x-mpegURL"
-          ></source>
-        </video-js>
+        ></video-js>
       </div>
     );
   }
