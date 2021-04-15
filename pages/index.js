@@ -1,10 +1,7 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
 import Header from "../public/Header";
 import MessengerChat from "../public/Messenger";
-import VideoJS from "../public/VideoJS";
-import VideoReact from "../public/video-react";
 import ReactHLS from 'react-hls';
 
 export default function Home() {
